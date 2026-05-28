@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlotte Nguyen — Marketing & Communication Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0E0E0E;
+    --white: #FAF9F6;
+    --cream: #F2EFE9;
+    --accent: #C8A96E;
+    --accent-light: #E8D9BC;
+    --muted: #6B6860;
+    --border: rgba(14,14,14,0.1);
+    --purple-soft: #EAE6F8;
+    --purple-deep: #4A3F8C;
+    --teal-soft: #E1F0EE;
+    --teal-deep: #1A6B5A;
+    --coral-soft: #F5EAE4;
+    --coral-deep: #8C3E28;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--black);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.2);
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    bottom: 60px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-name em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    color: rgba(250,249,246,0.65);
+    margin-top: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2rem;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid rgba(200,169,110,0.4);
+    color: var(--accent-light);
+    border-radius: 99px;
+  }
+
+  .hero-contact {
+    font-size: 13px;
+    color: rgba(250,249,246,0.5);
+    line-height: 2;
+  }
+
+  .hero-contact a {
+    color: rgba(250,249,246,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-contact a:hover { color: var(--accent); }
+
+  .hero-right {
+    background: var(--cream);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .metric-item {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+  }
+
+  .metric-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: -0.03em;
+  }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+  }
+
+  .hero-about {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+  }
+
+  .section-heading span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-body p {
+    font-size: 1.05rem;
+    color: #3A3834;
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-quote {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--black);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .about-sidebar {
+    background: var(--cream);
+    padding: 2rem;
+  }
+
+  .sidebar-section {
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    margin: 3px 3px 3px 0;
+    background: var(--white);
+    border-radius: 4px;
+    color: #3A3834;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .lang-level {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-section { background: var(--black); padding: 6rem 0; }
+  .exp-inner { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+  .exp-section .section-heading { color: var(--white); }
+  .exp-section .section-eyebrow { color: var(--accent); }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .exp-meta {
+    padding-top: 4px;
+  }
+
+  .exp-company {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .exp-period {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 12px;
+  }
+
+  .exp-role-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 12px;
+    border: 1px solid rgba(200,169,110,0.3);
+    color: rgba(200,169,110,0.8);
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+  }
+
+  .exp-content { padding-top: 4px; }
+
+  .exp-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .exp-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exp-bullets li {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .exp-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 2px;
+  }
+
+  .exp-highlight {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-top: 2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .exp-highlight-item {
+    background: var(--black);
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .exp-highlight-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .exp-highlight-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ── CASE STUDIES ── */
+  .case-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .case-card {
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .case-visual {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+  }
+
+  .case-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin-top: 1.5rem;
+    object-fit: cover;
+  }
+
+  .case-visual.purple {
+    background: var(--purple-soft);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .case-view-images {
+    font-family: 'Unbounded', 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    margin-top: 1.5rem;
+    font-size: 4rem;
+    background-color: transparent;
+    padding: 0.8rem 1.1rem;
+    border: none;
+    color: var(--purple-deep);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    align-self: start;
+    text-align: left;
+    opacity: 1;
+  }
+
+  .case-visual.purple .case-view-images {
+    color: var(--purple-deep);
+  }
+
+  .case-visual.teal .case-view-images {
+    color: var(--teal-deep);
+    opacity: 0.12;
+  }
+
+  .case-visual.coral .case-view-images {
+    color: var(--coral-deep);
+    
+  }
+
+  .case-visual.purple .case-view-images:hover {
+    background: rgba(74,63,140,0.18);
+  }
+
+  .case-visual.teal .case-view-images:hover {
+    background: rgba(26,107,90,0.18);
+  }
+
+  .case-visual.coral .case-view-images:hover {
+    background: rgba(140,62,40,0.18);
+  }
+
+  .case-visual.purple:hover {
+    transform: translateY(-2px);
+  }
+
+  .case-visual.teal { background: var(--teal-soft); }
+
+  .gallery-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 1.5rem;
+    z-index: 1000;
+  }
+
+  .gallery-modal.open {
+    display: flex;
+  }
+
+  .gallery-modal-content {
+    width: min(100%, 1100px);
+    max-height: 90vh;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .gallery-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .gallery-slider {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .gallery-slider img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .gallery-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .gallery-nav-button {
+    border: none;
+    background: var(--black);
+    color: var(--white);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .gallery-nav-button:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .gallery-counter {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-align: center;
+    flex: 1;
+  }
+
+  @media (max-width: 700px) {
+    .gallery-modal-content {
+      padding: 1rem;
+    }
+
+    .gallery-slider {
+      min-height: 320px;
+    }
+
+    .gallery-nav {
+      flex-direction: column;
+    }
+
+    .gallery-nav-button {
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
+  .case-visual.coral { background: var(--coral-soft); }
+
+  .case-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    opacity: 0.12;
+  }
+
+  .case-visual.purple .case-num { color: var(--purple-deep); }
+  .case-visual.teal .case-num { color: var(--teal-deep); }
+  .case-visual.coral .case-num { color: var(--coral-deep); }
+
+  .case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .case-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 99px;
+    letter-spacing: 0.05em;
+  }
+
+  .purple .case-tag { background: rgba(74,63,140,0.12); color: var(--purple-deep); }
+  .teal .case-tag { background: rgba(26,107,90,0.12); color: var(--teal-deep); }
+  .coral .case-tag { background: rgba(140,62,40,0.12); color: var(--coral-deep); }
+
+  .case-content {
+    padding: 3rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .case-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .case-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--black);
+  }
+
+  .case-body {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #4A4845;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 1.5rem;
+  }
+
+  .case-stat {
+    background: var(--white);
+    padding: 1rem;
+  }
+
+  .case-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .case-stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .block-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin: 1rem 0 0.4rem;
+  }
+
+  /* ── SKILLS FULL ── */
+  .skills-section { background: var(--cream); padding: 6rem 0; }
+  .skills-inner { max-width: 1200px; margin: 0 auto; padding: 0 4rem; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-group {
+    background: var(--white);
+    padding: 2rem;
+  }
+
+  .skill-group-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--black);
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .skill-list li {
+    font-size: 13px;
+    color: #4A4845;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .skill-list li::before {
+    content: '';
+    display: block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+
+  .edu-period {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-school {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  .edu-degree {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .edu-gpa {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--accent-light);
+    color: #5A3E0A;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--black);
+    text-align: center;
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.08);
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; height: 900px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,169,110,0.05);
+  }
+
+  .cta-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .cta-heading {
+    font-family: 'Poppins', 'DM Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 3rem;
+    font-style: italic;
+    position: relative;
+  }
+
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,110,0.3);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  .cta-link .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+  .img1 {
+    margin: 10px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 3rem 2rem; }
+    .hero-right { padding: 3rem 2rem; }
+    section { padding: 4rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .case-card { grid-template-columns: 1fr; }
+    .case-content { border-left: none; border-top: 1px solid var(--border); }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .exp-inner { padding: 0 2rem; }
+    .skills-inner { padding: 0 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="nav-logo">Portfolio · 2025</div>
+
+    <div>
+      <h1 class="hero-name">
+        Nguyen<br>Luu Anh<br><em>Xuyen</em>
+      </h1>
+      <p class="hero-tagline">"Marketing isn't just about promotion - it's about building meaningful connections."</p>
+      <div class="hero-badges">
+        <span class="badge">Marketing Specialist</span>
+        <span class="badge">Account Executive</span>
+        <span class="badge">IMC</span>
+        <span class="badge">Content Strategy</span>
+      </div>
+    </div>
+
+    <div class="hero-contact">
+      <div>📍 Me Tri, Ha Noi</div>
+      <div><a href="mailto:nlax.work@gmail.com">nlax.work@gmail.com</a></div>
+      <div><a href="tel:+84814008061">+84 814 008 061</a></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-num">150K+</div>
+        <div class="metric-label">Facebook followers grown</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">40K+</div>
+        <div class="metric-label">TikTok followers grown</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">3+</div>
+        <div class="metric-label">Năm kinh nghiệm</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">5K+</div>
+        <div class="metric-label">International journalist network</div>
+      </div>
+    </div>
+
+    <p class="hero-about">
+      Là một Marcom & Account Professional sở hữu 3+ năm kinh nghiệm thực chiến trong cả môi trường agency và in-houseHành trình này giúp mình có cái nhìn toàn diện để hiểu rõ cả hai phía của bàn cân: người ra brief và người execute. Thế mạnh của mình là sự kết hợp giữa tư duy tích hợp (IMC), khả năng điều phối stakeholder và tối ưu content đa kênh (từng tự tay build growth 150K+ FB followers và 40K+ TikTok followers). Mục tiêu tiếp theo của mình là mảng corporate Marcom và strategic marketing, tìm kiếm một bến đỗ đủ tầm để cùng thương hiệu "play big" trên một sân chơi lớn hơn.
+    </p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section>
+  <p class="section-eyebrow">01 · About Me</p>
+  <div class="about-grid">
+    <div class="about-body">
+      <h2 class="section-heading">Người làm marketing<br><span>bằng cả data lẫn trực giác</span></h2>
+
+      <p>Mình bắt đầu hành trình từ agency, nơi mỗi brief nhận được là một bài toán mới, mỗi deadline sát nút là một bài test "sức bền" tinh thần, và mỗi client là một bài học thực tế về stakeholder management. Chính môi trường "va vấp" liên tục này đã rèn cho mình tư duy bắt buộc phải think strategic trước khi nghĩ đến chuyện think creative.</p>
+
+      <p>Khi chuyển sang làm in-house tại BH Media, bài toán lại mang một màu sắc khác. Ở vị trí này, mình không chỉ plan content đơn thuần mà đã tự tay build community từ những con số khiêm tốn lên hàng trăm nghìn followers. Đây cũng là nơi mình thấm thía một điều: audience growth chưa bao giờ là câu chuyện may mắn, nó là kết quả của một vòng lặp vô tận giữa test, fail, optimize và repeat.</p>
+
+      <blockquote class="about-quote">"Các cụ có câu "biết người biết ta, trăm trận trăm thắng". Việc được trải nghiệm ở cả hai đầu chiến tuyến, agency & client, chính là lợi thế cạnh tranh giúp mình có cái nhìn toàn diện mà không phải marketer nào cũng sở hữu."</blockquote>
+
+      <p>Để tiếp tục thử thách bản thân, mình đang tìm kiếm môi trường corporate communication hoặc agency account để phát huy tối đa khả năng kết hợp giữa IMC strategy, content execution và relationship management, hướng tới những chiến dịch có scale lớn hơn và tạo ra impact rõ nét hơn.</p>
+
+      <p style="font-size:0.9rem; color: var(--muted); font-style: italic;">Bên ngoài văn phòng, mình là người thích nạp kiến thức hơn là "flex" phong cách sống. Mình nghe podcast chuyên ngành nhiều hơn xem drama, đồng thời dành phần lớn thời gian để "đào xới" cách làm marketing ở nhiều lĩnh vực khác nhau, đặc biệt là ngành tech marketing, nơi mà mọi thứ thay đổi nhanh như cách crush lật mặt. Việc liên tục "F5" bản thân này giúp mình luôn có sẵn tư duy mở và chất liệu mới để giải quyết các bài toán khó.</p>
+    </div>
+
+    <div>
+      <div class="about-sidebar">
+        <div class="sidebar-section">
+          <p class="sidebar-label">Core Skills</p>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">IMC Planning</span>
+          <span class="skill-tag">Social Media Management</span>
+          <span class="skill-tag">PR & Media Relations</span>
+          <span class="skill-tag">Audience Insight</span>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Event Coordination</span>
+          <span class="skill-tag">Content Angle Testing</span>
+          <span class="skill-tag">Performance Optimization</span>
+          <span class="skill-tag">Partnership Proposals</span>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">Tools</p>
+          <span class="skill-tag">Meta Business Suite</span>
+          <span class="skill-tag">TikTok Creator Studio</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">CapCut</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Notion</span>
+        </div>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">Languages</p>
+          <div class="lang-item">
+            <span>English</span>
+            <span class="lang-level">IELTS 6.5</span>
+          </div>
+          <div class="lang-item">
+            <span>Chinese (Mandarin)</span>
+            <span class="lang-level">HSK2</span>
+          </div>
+          <div class="lang-item" style="border: none;">
+            <span>Vietnamese</span>
+            <span class="lang-level">Native</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+<div class="exp-section">
+  <div class="exp-inner">
+    <p class="section-eyebrow">02 · Experience</p>
+    <h2 class="section-heading" style="color:var(--white);">Kinh nghiệm thực chiến<br><span style="color:rgba(255,255,255,0.35);">của mình</span></h2>
+
+    <!-- BH MEDIA -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">BH Media</div>
+        <div class="exp-period">03/2024 — 05/2026 · 2 năm 2 tháng</div>
+        <div class="exp-role-badge">Marketing Specialist</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-title">Build audience từ content, không từ ads budget</h3>
+        <ul class="exp-bullets">
+          <li>Quản lý toàn bộ hoạt động marketing và truyền thông cho công ty và các dự án đối tác qua social media, OOH và báo chí. Phụ trách từ lên concept đến execution, từ content calendar đến phân tích số liệu hàng tuần</li>
+          <li>Xây dựng Facebook fanpage tăng 150K+ followers và kênh TikTok tăng 40K+ followers thông qua content planning chiến lược và community engagement — không phải chạy ads thuần túy</li>
+          <li>Phối hợp với internal team và external partners để đảm bảo các chiến dịch marketing và content được triển khai đúng timeline và đúng thông điệp</li>
+          <li>Soạn thảo tài liệu dự án và đề xuất hợp tác (partnership proposals) hỗ trợ team business development</li>
+          <li>Xây dựng tài liệu đào tạo và tham gia tổ chức workshop cho nhân viên và đối tác bên ngoài</li>
+          <li>Hỗ trợ tổ chức các sự kiện đối tác: live show âm nhạc, press conference ra mắt sản phẩm, các hoạt động promotional</li>
+          <li>Nghiên cứu thị trường và đối thủ cạnh tranh để xây dựng chiến lược marketing cho sản phẩm TV Box, dự án âm nhạc và phim</li>
+        </ul>
+
+        <div class="exp-highlight">
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">150K+</div>
+            <div class="exp-highlight-label">FB Followers Grown</div>
+          </div>
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">40K+</div>
+            <div class="exp-highlight-label">TikTok Followers Grown</div>
+          </div>
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">120+</div>
+            <div class="exp-highlight-label">Campaigns Executed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAVA SOLUTIONS -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-company">Cava Solutions</div>
+        <div class="exp-period">08/2022 — 04/2024 · 1 năm 8 tháng</div>
+        <div class="exp-role-badge">Account Executive</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-title">Đưa brand Việt ra tầm quốc tế</h3>
+        <ul class="exp-bullets">
+          <li>Quản lý các hoạt động IMC quốc tế cho các client lớn bao gồm Vingroup, Charm Group và VietJet. Làm việc trực tiếp với mạng lưới truyền thông quốc tế và các team creative, media, strategy để deliver dự án đúng hạn và đúng kỳ vọng</li>
+          <li>Quản lý tổng thể các hoạt động IMC quốc tế cho danh mục client gồm Vingroup, Charm Group và VietJet, phụ trách cả strategy lẫn execution</li>
+          <li>Duy trì và phát triển quan hệ với mạng lưới 5.000+ nhà báo quốc tế để hỗ trợ các chiến dịch PR và truyền thông quốc tế cho brand Việt Nam</li>
+          <li>Phối hợp chặt chẽ với team creative, media và strategy để đảm bảo timeline và chất lượng deliverable</li>
+          <li>Tham gia tổ chức và điều phối sự kiện ra mắt xe VinFast cho cả thị trường Việt Nam và thị trường Mỹ — quản lý sự khác biệt văn hóa và kỳ vọng truyền thông của hai thị trường</li>
+          <li>Cung cấp marketing insights, tư vấn và triển khai chiến dịch truyền thông Marketing cho các client quốc tế có kế hoạch gia nhập thị trường Việt Nam</li>
+        </ul>
+
+        <div class="exp-highlight">
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">5K+</div>
+            <div class="exp-highlight-label">Journalist Network</div>
+          </div>
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">3</div>
+            <div class="exp-highlight-label">Major Clients</div>
+          </div>
+          <div class="exp-highlight-item">
+            <div class="exp-highlight-num">2</div>
+            <div class="exp-highlight-label">Markets - VN & US</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ CASE STUDIES ═══════════════════════ -->
+<section>
+  <p class="section-eyebrow">03 · Case Studies</p>
+  <h2 class="section-heading">Những dự án<br><span>mình tự hào nhất</span></h2>
+
+  <div class="case-grid">
+
+    <!-- CASE 1 -->
+    <div class="case-card">
+      <div class="case-visual purple">
+        <div class="case-num">01</div>
+        <button type="button" class="case-view-images" id="viewSectionImages">XEM HÌNH ẢNH</button>
+        <div class="case-tags">
+          <span class="case-tag">Social Growth</span>
+          <span class="case-tag">Content Strategy</span>
+          <span class="case-tag">TikTok + Facebook</span>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-eyebrow">BH Media · 2024 — 2026</p>
+        <h3 class="case-title">Tăng trưởng organic followers cho fanpage chính thức của công ty</h3>
+        <p class="case-body">
+          <span class="block-label">🎯 Challenge</span>
+          Kênh social của BH Media cần tăng trưởng mạnh mà không phụ thuộc hoàn toàn vào paid ads. Target audience đa dạng, từ người khán giả ưa thích nội dung giải trí đến người dùng tech (TV Box) và thậm chí các đối tác nghệ sĩ.
+        </p>
+        <p class="case-body">
+          <span class="block-label">🔧 Approach</span>
+          Xây dựng content calendar theo từng segment audience, test nhiều content angle khác nhau (behind-the-scenes, educational, entertainment), tối ưu theo data hàng tuần. Đặc biệt chú trọng community engagement: reply comment, tạo conversation, không chỉ broadcast một chiều.
+        </p>
+        <p class="case-body">
+          <span class="block-label">📈 Result</span>
+          Fanpage Facebook tăng 150K+ followers, kênh TikTok đăng lại nội dung từ fanpage cũng tăng 40K+ followers. Avg. engagement rate duy trì ở mức 4.16%, cao hơn mức trung bình ngành (khoảng 1-2%), lượt xem nội dung của fanpage mỗi tháng lên đến 12M+ cho thấy chất lượng audience và content phù hợp với thị hiếu người dùng. Quan trọng hơn, sự tăng trưởng này không phải đến từ việc đổ tiền vào quảng cáo mà là kết quả của một chiến lược content và community engagement bài bản.
+        </p>
+        <div class="case-row">
+          <div class="case-stat"><div class="case-stat-label">FB Followers</div><div class="case-stat-val">+150K</div></div>
+          <div class="case-stat"><div class="case-stat-label">TikTok Followers</div><div class="case-stat-val">+40K</div></div>
+          <div class="case-stat"><div class="case-stat-label">Avg. Engagement</div><div class="case-stat-val">4.16%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-card">
+      <div class="case-visual teal">
+        <div class="case-num">02</div>
+        <button type="button" class="case-view-images" id="viewSection2Images">XEM HÌNH ẢNH</button>
+        <div class="case-tags">
+          <span class="case-tag">IMC International</span>
+          <span class="case-tag">PR</span>
+          <span class="case-tag">Event</span>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-eyebrow">Cava Solutions · 2022 - 2024</p>
+        <h3 class="case-title">VinFast Showroom Opening - US Markets</h3>
+        <p class="case-body">
+          <span class="block-label">🎯 Challenge</span>
+          Truyền thông cho sự kiện ra mắt showroom VinFast tại thị trường Mỹ (thị trường mới, cần establish credibility từ đầu).
+        </p>
+        <p class="case-body">
+          <span class="block-label">🔧 Approach</span>
+          Customize messaging để xây dựng Brand Awareness tại thị trường Mỹ. Activate mạng lưới 5.000+ nhà báo quốc tế. Phối hợp cross-functional với team creative, media buyer và strategy để đảm bảo consistency trong key message nhưng adapt được tone và channel.
+        </p>
+        <p class="case-body">
+          <span class="block-label">📈 Result</span>
+          Cái tên VinFast xuất hiện trên 100+ outlets quốc tế, bao gồm các tờ báo lớn như The Wall Street Journal. Sự kiện showroom opening thu hút hơn 1,000 khách tham dự và tạo được tiếng vang tích cực trong cộng đồng người tiêu dùng Mỹ.
+        </p>
+        <div class="case-row">
+          <div class="case-stat"><div class="case-stat-label">Markets</div><div class="case-stat-val">US</div></div>
+          <div class="case-stat"><div class="case-stat-label">Media Coverage</div><div class="case-stat-val">100+ outlets</div></div>
+          <div class="case-stat"><div class="case-stat-label">Press Contacts</div><div class="case-stat-val">5,000+</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-card">
+      <div class="case-visual coral">
+        <div class="case-num">03</div>
+        <img class ='img1' src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-6/480358000_1365521291128192_8113596899825472059_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=109&ccb=1-7&_nc_sid=fe5ecc&_nc_eui2=AeHSjjRF9GoTXqsjgo6DM_pLCWnynBP_TegJafKcE_9N6PysVHWs5jfT1iFcHIaMNCWZ0EEBxRTucgq2YKxPVKDk&_nc_ohc=QF5vHvdLBHIQ7kNvwHP5ils&_nc_oc=AdrgwGvAIGW2HV1dhA6QsS9uO-VIQIu82D20ckW_vBwi0MwB27-55vmDFgha2NiLtBk&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=FfHcFvD7nCbQMH5n7kANTQ&_nc_ss=7b2a8&oh=00_Af68XsBRCDCOIhuk4OnOmg44qwLr4kVFvsoEYZ4JB96m-A&oe=6A1D9F93" alt="Case 3 visual" />
+        <div class="case-tags">
+          <span class="case-tag">B2B Marketing</span>
+          <span class="case-tag">Client Consultation</span>
+          <span class="case-tag">Market Entry</span>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-eyebrow">Cava Solutions · 2022 — 2024</p>
+        <h3 class="case-title">Market Entry Consultation — International Brands vào Việt Nam</h3>
+        <p class="case-body">
+          <span class="block-label">🎯 Challenge</span>
+          Các client quốc tế muốn gia nhập thị trường Việt Nam nhưng thiếu local insight — không hiểu consumer behavior, media landscape và regulatory environment tại đây.
+        </p>
+        <p class="case-body">
+          <span class="block-label">🔧 Approach</span>
+          Nghiên cứu thị trường chuyên sâu, phân tích đối thủ cạnh tranh trong nước, xây dựng market entry recommendation deck cho từng client. Đề xuất channel mix và messaging phù hợp với audience Việt Nam.
+        </p>
+        <p class="case-body">
+          <span class="block-label">📈 Result</span>
+          [Bổ sung: số client đã tư vấn, outcome cụ thể nếu có, feedback từ client]
+        </p>
+        <div class="case-row">
+          <div class="case-stat"><div class="case-stat-label">Clients Advised</div><div class="case-stat-val">[X]</div></div>
+          <div class="case-stat"><div class="case-stat-label">Industries</div><div class="case-stat-val">[X]</div></div>
+          <div class="case-stat"><div class="case-stat-label">Client Retention</div><div class="case-stat-val">[X]%</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<div class="skills-section">
+  <div class="skills-inner">
+    <p class="section-eyebrow">04 · Skills & Expertise</p>
+    <h2 class="section-heading">Mình mạnh<br><span>về những gì</span></h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-group-title">Content & Creative</p>
+        <ul class="skill-list">
+          <li>Content strategy & planning</li>
+          <li>Content angle development & testing</li>
+          <li>Audience insight research</li>
+          <li>Copywriting (Vietnamese & English)</li>
+          <li>Social media content (FB, TikTok, IG)</li>
+          <li>Training material creation</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Strategy & Analytics</p>
+        <ul class="skill-list">
+          <li>IMC planning & execution</li>
+          <li>Data-informed optimization</li>
+          <li>Engagement & retention analysis</li>
+          <li>Market & competitor research</li>
+          <li>Market entry consultation</li>
+          <li>Campaign performance tracking</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Collaboration & Account</p>
+        <ul class="skill-list">
+          <li>Client & stakeholder management</li>
+          <li>Cross-functional coordination</li>
+          <li>Project & task management</li>
+          <li>Partnership proposal writing</li>
+          <li>PR & media relations</li>
+          <li>Event planning & coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ EDUCATION ═══════════════════════ -->
+<section>
+  <p class="section-eyebrow">05 · Education</p>
+  <h2 class="section-heading">Nền tảng học thuật</h2>
+
+  <div class="edu-grid">
+    <div class="edu-card">
+      <p class="edu-period">2019 — 2023</p>
+      <p class="edu-school">University of Economics and Business — Vietnam National University</p>
+      <p class="edu-degree">Bachelor of Business Administration</p>
+      <span class="edu-gpa">GPA 3.27 — Distinction</span>
+    </div>
+    <div class="edu-card">
+      <p class="edu-period">Extracurricular</p>
+      <p class="edu-school">Content Team Member</p>
+      <p class="edu-degree">Freshman Welcome Program 2020 — VNU</p>
+      <p style="margin-top:1rem; font-size:13px; color: var(--muted); line-height:1.7;">Đây là lần đầu tiên mình nhận ra mình thích làm content: tự lên concept, tự viết, tự đo xem có ai đọc không. Spoiler: có người đọc.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+<div class="cta-section">
+  <p class="cta-eyebrow">06 · Let's Talk</p>
+  <h2 class="cta-heading">Nếu bạn cần người build audience, không chỉ manage content</h2>
+  <p class="cta-sub">mình sẵn sàng chat. Không cần slide deck 30 trang, chỉ cần một cuộc call 30 phút.</p>
+
+  <div class="cta-contacts">
+    <a class="cta-link" href="mailto:nlax.work@gmail.com">
+      <span class="dot"></span>nlax.work@gmail.com
+    </a>
+    <a class="cta-link" href="tel:+84814008061">
+      <span class="dot"></span>+84 814 008 061
+    </a>
+    <a class="cta-link" href="#">
+      <span class="dot"></span>LinkedIn Profile
+    </a>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="footer-name">NGUYEN LUU ANH XUYEN · CHARLOTTE</span>
+  <span class="footer-copy">Marketing & Communication Portfolio · 2025</span>
+</div>
+
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+  <div class="gallery-modal-content" role="dialog" aria-modal="true" aria-label="Section 1 image gallery">
+    <button class="gallery-close" id="galleryClose" aria-label="Close gallery">×</button>
+    <div class="gallery-slider">
+      <button class="gallery-nav-button" id="prevImage" aria-label="Previous image">‹</button>
+      <img id="galleryImage" src="" alt="Section 1 image" />
+      <button class="gallery-nav-button" id="nextImage" aria-label="Next image">›</button>
+    </div>
+    <div class="gallery-nav">
+      <span class="gallery-counter" id="galleryCounter">1 / 4</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section1Images = [
+      'section1/1085e95f-8f25-40a1-aacf-d36a2131ae73.jpg',
+      'section1/70999edb-6fd6-4393-8b3b-1ff24d043498.jpg',
+      'section1/Screenshot%202026-05-28%20122336.png',
+      'section1/Screenshot%202026-05-28%20122353.png',
+      'section1/Screenshot%202026-05-28%20122408.png',
+      'section1/Screenshot%202026-05-28%20122420.png'
+    ];
+
+    const section2Images = [
+      'section2/Screenshot%202026-05-28%20130304.png',
+      'section2/Screenshot%202026-05-28%20130334.png',
+      'section2/Screenshot%202026-05-28%20130409.png',
+      'section2/Screenshot%202026-05-28%20130514.png',
+      'section2/Screenshot%202026-05-28%20130538.png'
+    ];
+
+    const modal = document.getElementById('galleryModal');
+    const galleryImage = document.getElementById('galleryImage');
+    const closeButton = document.getElementById('galleryClose');
+    const prevButton = document.getElementById('prevImage');
+    const nextButton = document.getElementById('nextImage');
+    const counter = document.getElementById('galleryCounter');
+    const purpleCase = document.querySelector('.case-visual.purple');
+    const tealCase = document.querySelector('.case-visual.teal');
+    const galleryButton = document.getElementById('viewSectionImages');
+    const gallery2Button = document.getElementById('viewSection2Images');
+
+    if (!modal || !galleryImage || !closeButton || !prevButton || !nextButton || !counter) return;
+
+    let currentIndex = 0;
+    let currentGalleryImages = section1Images;
+    let currentGalleryLabel = 'Section 1';
+
+    function renderGallery() {
+      const source = currentGalleryImages[currentIndex];
+      galleryImage.src = source;
+      galleryImage.alt = `${currentGalleryLabel} image ${currentIndex + 1}`;
+      counter.textContent = `${currentIndex + 1} / ${currentGalleryImages.length}`;
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex === currentGalleryImages.length - 1;
+    }
+
+    function openGallery(images, label) {
+      currentGalleryImages = images;
+      currentGalleryLabel = label;
+      currentIndex = 0;
+      renderGallery();
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeGallery() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function showPrevious() {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
+        renderGallery();
+      }
+    }
+
+    function showNext() {
+      if (currentIndex < currentGalleryImages.length - 1) {
+        currentIndex += 1;
+        renderGallery();
+      }
+    }
+
+    if (purpleCase) {
+      purpleCase.addEventListener('click', function () {
+        openGallery(section1Images, 'Section 1');
+      });
+    }
+    if (tealCase) {
+      tealCase.addEventListener('click', function () {
+        openGallery(section2Images, 'Section 2');
+      });
+    }
+    if (galleryButton) {
+      galleryButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        openGallery(section1Images, 'Section 1');
+      });
+    }
+    if (gallery2Button) {
+      gallery2Button.addEventListener('click', function (event) {
+        event.stopPropagation();
+        openGallery(section2Images, 'Section 2');
+      });
+    }
+
+    prevButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      showPrevious();
+    });
+    nextButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      showNext();
+    });
+    closeButton.addEventListener('click', closeGallery);
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        closeGallery();
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeGallery();
+      }
+      if (modal.classList.contains('open')) {
+        if (event.key === 'ArrowLeft') {
+          showPrevious();
+        }
+        if (event.key === 'ArrowRight') {
+          showNext();
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
