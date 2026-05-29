@@ -570,6 +570,80 @@
     display: block;
   }
 
+  /* Inline gallery specific styles (case card sliders) */
+  .inline-gallery {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .inline-gallery .gallery-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0.5rem 0;
+  }
+
+  .inline-gallery .gallery-slider .inline-image {
+    max-width: 100%;
+    max-height: 420px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
+
+  .inline-gallery .gallery-nav {
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+
+  .inline-gallery .gallery-counter {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .inline-gallery .gallery-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .inline-gallery .inline-prev { left: 12px; }
+  .inline-gallery .inline-next { right: 12px; }
+
+  /* Responsive tweaks */
+  @media (max-width: 900px) {
+    .inline-gallery .gallery-slider { padding: 0.4rem 0; }
+    .inline-gallery .gallery-slider .inline-image { max-height: 320px; }
+    .inline-gallery .gallery-nav-button { width: 44px; height: 44px; }
+  }
+
+  @media (max-width: 700px) {
+    .inline-gallery { margin-top: 0.75rem; }
+    .inline-gallery .gallery-slider { padding: 0.35rem 0; }
+    .inline-gallery .gallery-slider .inline-image { max-height: 220px; }
+    .inline-gallery .gallery-nav { margin-top: 0.45rem; }
+    .inline-gallery .gallery-nav-button { width: 40px; height: 40px; }
+  }
+
   .gallery-nav {
     display: flex;
     justify-content: space-between;
@@ -1281,7 +1355,16 @@
     <div class="case-card">
       <div class="case-visual purple">
         <div class="case-num">01</div>
-        <button type="button" class="case-view-images" id="viewSectionImages">XEM HÌNH ẢNH</button>
+        <div class="inline-gallery" data-gallery="1">
+          <div class="gallery-slider">
+            <button class="gallery-nav-button inline-prev" aria-label="Previous image">‹</button>
+            <img class="inline-image" src="section1/1085e95f-8f25-40a1-aacf-d36a2131ae73.jpg" alt="Case 1 image" />
+            <button class="gallery-nav-button inline-next" aria-label="Next image">›</button>
+          </div>
+          <div class="gallery-nav">
+            <span class="gallery-counter inline-counter">1 / 9</span>
+          </div>
+        </div>
         <div class="case-tags">
           <span class="case-tag">Social Growth</span>
           <span class="case-tag">Content Strategy</span>
@@ -1315,7 +1398,16 @@
     <div class="case-card">
       <div class="case-visual teal">
         <div class="case-num">02</div>
-        <button type="button" class="case-view-images" id="viewSection2Images">XEM HÌNH ẢNH</button>
+        <div class="inline-gallery" data-gallery="2">
+          <div class="gallery-slider">
+            <button class="gallery-nav-button inline-prev" aria-label="Previous image">‹</button>
+            <img class="inline-image" src="section2/Screenshot%202026-05-28%20130304.png" alt="Case 2 image" />
+            <button class="gallery-nav-button inline-next" aria-label="Next image">›</button>
+          </div>
+          <div class="gallery-nav">
+            <span class="gallery-counter inline-counter">1 / 5</span>
+          </div>
+        </div>
         <div class="case-tags">
           <span class="case-tag">IMC International</span>
           <span class="case-tag">PR</span>
@@ -1353,7 +1445,7 @@
           <a href="https://www.canva.com/design/DAHK7v9w35o/VI7CHvA2PpNsRLxI-ahhhw/view?utm_content=DAHK7v9w35o&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h50da541e85#1" target="_blank" style="font-size: 13px; color: var(--coral-deep); text-decoration: none; border-bottom: 1px solid var(--coral-deep); padding-bottom: 4px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Campaign 1 - View Research →</a>
           <a href="https://www.canva.com/design/DAGhaCnOEO0/fIj4Qjk6guV56z_saYV51Q/view?utm_content=DAGhaCnOEO0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h25f15b3412" target="_blank" style="font-size: 13px; color: var(--coral-deep); text-decoration: none; border-bottom: 1px solid var(--coral-deep); padding-bottom: 4px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Campaign 2 - View Campaign →</a>
           <a href="https://www.canva.com/design/DAGjAAUQAts/KOEysRhwmyXqWowAF6tmcA/view?utm_content=DAGjAAUQAts&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2a002b4f40" target="_blank" style="font-size: 13px; color: var(--coral-deep); text-decoration: none; border-bottom: 1px solid var(--coral-deep); padding-bottom: 4px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Campaign 3 - View Campaign →</a>
-          <a href="https://www.canva.com/design/DAHEkKbpkOI/7E70nAIAgI5efQf3QyrcqA/view?utm_content=DAHEkKbpkOI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee2d7cc182" target="_blank" style="font-size: 13px; color: var(--coral-deep); text-decoration: none; border-bottom: 1px solid var(--coral-deep); padding-bottom: 4px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Campaign 4 - View Campaign →</a>
+          <a href="https://travelasianow.net/eco-resorts-vietnam/" target="_blank" style="font-size: 13px; color: var(--coral-deep); text-decoration: none; border-bottom: 1px solid var(--coral-deep); padding-bottom: 4px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Campaign 5 - Vietnamese Travel Promotion →</a>
         </div>
         <div class="case-tags">
           <span class="case-tag">IMC Strategy</span>
@@ -1378,7 +1470,7 @@
         </p>
         <div class="case-row">
           <div class="case-stat"><div class="case-stat-label">Campaigns run</div><div class="case-stat-val">4</div></div>
-          <div class="case-stat"><div class="case-stat-label">Industries</div><div class="case-stat-val">Beauty,Health care</div></div>
+          <div class="case-stat"><div class="case-stat-label">Industries</div><div class="case-stat-val">Beauty,Health care, Travel</div></div>
           <div class="case-stat"><div class="case-stat-label">Client Satisfaction</div><div class="case-stat-val">95%</div></div>
         </div>
       </div>
@@ -1504,7 +1596,10 @@
       'section1/Screenshot%202026-05-28%20122336.png',
       'section1/Screenshot%202026-05-28%20122353.png',
       'section1/Screenshot%202026-05-28%20122408.png',
-      'section1/Screenshot%202026-05-28%20122420.png'
+      'section1/Screenshot%202026-05-28%20122420.png',
+      'section1/0a737c56-7d3a-4673-93e0-46b54863d619.jpg',
+      'section1/ffec6abd-5c36-48fb-80f2-25bdd92b7b64.jpg',
+      'section1/36961ef9-ffd9-47e9-b181-549423dd156d.jpg'
     ];
 
     const section2Images = [
@@ -1591,6 +1686,41 @@
         openGallery(section2Images, 'Section 2');
       });
     }
+
+    // Initialize inline galleries embedded inside the case cards
+    (function initInlineGalleries(){
+      const inlineGalleries = document.querySelectorAll('.inline-gallery');
+      inlineGalleries.forEach(function(gallery){
+        const id = gallery.getAttribute('data-gallery');
+        const images = id === '2' ? section2Images : section1Images;
+        const imgEl = gallery.querySelector('.inline-image');
+        const prev = gallery.querySelector('.inline-prev');
+        const next = gallery.querySelector('.inline-next');
+        const counterEl = gallery.querySelector('.inline-counter');
+        if (!imgEl || !prev || !next || !counterEl) return;
+        let idx = 0;
+        function render() {
+          imgEl.src = images[idx];
+          imgEl.alt = `Case ${id} image ${idx + 1}`;
+          counterEl.textContent = `${idx + 1} / ${images.length}`;
+          prev.disabled = idx === 0;
+          next.disabled = idx === images.length - 1;
+        }
+        prev.addEventListener('click', function(e){ e.stopPropagation(); if (idx > 0) { idx--; render(); } });
+        next.addEventListener('click', function(e){ e.stopPropagation(); if (idx < images.length - 1) { idx++; render(); } });
+
+        // Clicking the surrounding visual (not the inline controls) opens the modal gallery
+        const parentVisual = gallery.closest('.case-visual');
+        if (parentVisual) {
+          parentVisual.addEventListener('click', function(e){
+            if (e.target.closest('.inline-prev') || e.target.closest('.inline-next')) return;
+            openGallery(images, `Section ${id}`);
+          });
+        }
+
+        render();
+      });
+    })();
 
     const translationMap = new Map([
       ['Là một Marcom & Account Professional với hơn 3 năm kinh nghiệm thực chiến trong cả môi trường Agency và In-house. Hành trình này giúp mình có cái nhìn toàn diện để hiểu rõ cả hai phía của bàn cân: người ra brief và người execute. Thế mạnh của mình là sự kết hợp giữa tư duy tích hợp (IMC), khả năng điều phối Stakeholder và tối ưu content đa kênh (từng tự tay build growth 150K+ Facebook followers và 40K+ TikTok followers). Mục tiêu tiếp theo của mình là mảng Corporate Marcom và Strategic Marketing, tìm kiếm một bến đỗ đủ tầm để cùng thương hiệu "play big" trên một sân chơi lớn hơn.', 'I am a Marcom & Account Professional with over 3 years of hands-on experience in both agency and in-house environments. This journey has given me a complete perspective on both sides of the balance: the one who briefs and the one who executes. My strength lies in combining integrated thinking (IMC), stakeholder coordination, and optimizing multi-channel content (having personally built growth of 150K+ Facebook followers and 40K+ TikTok followers). My next goal is Corporate Marcom and Strategic Marketing, seeking a platform large enough to help a brand "play big" on a bigger stage.'],
