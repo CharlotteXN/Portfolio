@@ -431,7 +431,7 @@
   }
 
   .case-visual.purple {
-    background: var(--purple-soft);
+    background: #BFA28C;
     cursor: pointer;
     transition: transform 0.2s ease;
   }
@@ -439,7 +439,7 @@
   .case-view-images {
     font-family: 'Unbounded', 'Plus Jakarta Sans', 'DM Sans', sans-serif;
     margin-top: 1.5rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
     background-color: transparent;
     padding: 0.8rem 1.1rem;
     border: none;
@@ -454,17 +454,17 @@
   }
 
   .case-visual.purple .case-view-images {
-    color: var(--purple-deep);
+    color: #683813;
     opacity: 0.12;
   }
 
   .case-visual.teal .case-view-images {
-    color: var(--teal-deep);
+    color: #6d6659;
     opacity: 0.12;
   }
 
   .case-visual.coral .case-view-images {
-    color: var(--coral-deep);
+    color: #5a5e3e;
     
   }
 
@@ -484,7 +484,28 @@
     transform: translateY(-2px);
   }
 
-  .case-visual.teal { background: var(--teal-soft); }
+  .case-visual.teal { background: #F3E4C9; }
+
+  .translate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.4rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    margin-top: 1.5rem;
+  }
+
+  .translate-button:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translateY(-1px);
+  }
 
   .gallery-modal {
     position: fixed;
@@ -599,7 +620,7 @@
       border-radius: 12px;
     }
   }
-  .case-visual.coral { background: var(--coral-soft); }
+  .case-visual.coral { background: #BABF94; }
 
   .case-num {
     font-family: 'Unbounded', 'Plus Jakarta Sans', 'DM Sans', sans-serif;
@@ -609,9 +630,9 @@
     opacity: 0.12;
   }
 
-  .case-visual.purple .case-num { color: var(--purple-deep); }
-  .case-visual.teal .case-num { color: var(--teal-deep); }
-  .case-visual.coral .case-num { color: var(--coral-deep); }
+  .case-visual.purple .case-num { color: #683813; }
+  .case-visual.teal .case-num { color: #6d6659; }
+  .case-visual.coral .case-num { color: #5a5e3e; }
 
   .case-tags {
     display: flex;
@@ -912,18 +933,137 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 3rem 2rem; }
-    .hero-right { padding: 3rem 2rem; }
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      overflow: visible;
+    }
+    .hero-left,
+    .hero-right {
+      padding: 3rem 2rem;
+      min-height: auto;
+      overflow: visible;
+    }
     section { padding: 4rem 2rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .exp-item { grid-template-columns: 1fr; gap: 1rem; }
-    .case-card { grid-template-columns: 1fr; }
+    .case-card { grid-template-columns: 1fr; overflow: visible; }
     .case-content { border-left: none; border-top: 1px solid var(--border); }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .edu-grid { grid-template-columns: 1fr; }
     .exp-inner { padding: 0 2rem; }
     .skills-inner { padding: 0 2rem; }
+  }
+
+  @media (max-width: 700px) {
+    .hero {
+      overflow: visible;
+    }
+    .hero-left,
+    .hero-right {
+      padding: 2rem 1.5rem;
+    }
+    .hero-right {
+      justify-content: flex-start;
+    }
+
+    .hero-left::before {
+      top: -50px;
+      right: -50px;
+      width: 220px;
+      height: 220px;
+    }
+
+    .hero-left::after {
+      bottom: 30px;
+      left: -40px;
+      width: 140px;
+      height: 140px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.4rem, 10vw, 3.2rem);
+    }
+
+    .hero-badges {
+      gap: 6px;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      font-size: 10px;
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .metric-item {
+      padding: 1.5rem 1rem;
+    }
+
+    .hero-about {
+      padding-left: 0.85rem;
+    }
+
+    .case-visual {
+      padding: 2rem 1.5rem;
+    }
+
+    .case-visual .case-num {
+      font-size: 4rem;
+    }
+
+    .case-row {
+      grid-template-columns: 1fr;
+    }
+
+    .case-stat {
+      padding: 0.85rem;
+    }
+
+    .case-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .skills-grid,
+    .edu-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-contacts {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cta-link {
+      width: 100%;
+    }
+
+    .footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .gallery-modal-content {
+      width: min(100%, 95vw);
+      padding: 1rem;
+    }
+
+    .gallery-slider {
+      min-height: 280px;
+    }
+
+    .gallery-nav {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .gallery-nav-button {
+      width: 100%;
+      border-radius: 12px;
+    }
   }
 </style>
 </head>
@@ -951,6 +1091,7 @@
       <div>📍 Me Tri, Ha Noi</div>
       <div><a href="mailto:nlax.work@gmail.com">nlax.work@gmail.com</a></div>
       <div><a href="tel:+84814008061">+84 814 008 061</a></div>
+      <button type="button" class="translate-button" id="translateButton">Translate page to English</button>
     </div>
   </div>
 
@@ -1448,6 +1589,98 @@
       gallery2Button.addEventListener('click', function (event) {
         event.stopPropagation();
         openGallery(section2Images, 'Section 2');
+      });
+    }
+
+    const translationMap = new Map([
+      ['Là một Marcom & Account Professional với hơn 3 năm kinh nghiệm thực chiến trong cả môi trường Agency và In-house. Hành trình này giúp mình có cái nhìn toàn diện để hiểu rõ cả hai phía của bàn cân: người ra brief và người execute. Thế mạnh của mình là sự kết hợp giữa tư duy tích hợp (IMC), khả năng điều phối Stakeholder và tối ưu content đa kênh (từng tự tay build growth 150K+ Facebook followers và 40K+ TikTok followers). Mục tiêu tiếp theo của mình là mảng Corporate Marcom và Strategic Marketing, tìm kiếm một bến đỗ đủ tầm để cùng thương hiệu "play big" trên một sân chơi lớn hơn.', 'I am a Marcom & Account Professional with over 3 years of hands-on experience in both agency and in-house environments. This journey has given me a complete perspective on both sides of the balance: the one who briefs and the one who executes. My strength lies in combining integrated thinking (IMC), stakeholder coordination, and optimizing multi-channel content (having personally built growth of 150K+ Facebook followers and 40K+ TikTok followers). My next goal is Corporate Marcom and Strategic Marketing, seeking a platform large enough to help a brand "play big" on a bigger stage.'],
+      ['Người làm Marketing', 'A marketer'],
+      ['bằng cả data lẫn trực giác', 'who uses both data and intuition'],
+      ['Mình bắt đầu hành trình từ Agency, nơi mỗi brief nhận được là một bài toán mới, mỗi deadline sát nút là một bài test "sức bền" tinh thần, và mỗi client là một bài học thực tế về Stakeholder Management. Chính môi trường "va vấp" liên tục này đã rèn cho mình tư duy bắt buộc phải think strategic trước khi nghĩ đến chuyện think creative.', 'I started my journey at an agency, where every brief was a new challenge, every tight deadline was a test of endurance, and every client was a real lesson in stakeholder management. That constantly demanding environment trained me to think strategically before thinking creatively.'],
+      ['Khi chuyển sang làm In-house tại BH Media, bài toán lại mang một màu sắc khác. Ở vị trí này, mình không chỉ Plan Content đơn thuần mà đã tự tay Build Community từ những con số khiêm tốn lên hàng trăm nghìn followers. Đây cũng là nơi mình thấm thía một điều: Audience Growth chưa bao giờ là câu chuyện may mắn, nó là kết quả của một vòng lặp vô tận giữa test, fail, optimize và repeat.', 'When I moved in-house to BH Media, the challenge took on a different dimension. In this role, I did more than just plan content; I personally built a community from modest numbers into hundreds of thousands of followers. This was also where I realized audience growth is never a matter of luck; it is the result of a continuous loop of testing, failing, optimizing, and repeating.'],
+      ['"Các cụ có câu "biết người biết ta, trăm trận trăm thắng". Việc được trải nghiệm ở cả hai đầu chiến tuyến, Agency & Client, chính là lợi thế cạnh tranh giúp mình có cái nhìn toàn diện mà không phải Marketer nào cũng sở hữu."', '"As the elders say, "know yourself and know your enemy, and you will win every battle." Experiencing both sides of the frontline, Agency and Client, is a competitive advantage that gives me a complete view not every marketer has."'],
+      ['Để tiếp tục thử thách bản thân, mình đang tìm kiếm môi trường Corporate Communication hoặc Agency Account để phát huy tối đa khả năng kết hợp giữa IMC Strategy, Content Execution và Relationship Management, hướng tới những chiến dịch có scale lớn hơn và tạo ra impact rõ nét hơn.', 'To continue challenging myself, I am looking for a Corporate Communication or Agency Account environment where I can fully leverage the combination of IMC Strategy, Content Execution, and Relationship Management, aiming for larger-scale campaigns and clearer impact.'],
+      ['Bên ngoài văn phòng, mình là người thích nạp kiến thức hơn là "flex" phong cách sống. Mình nghe podcast chuyên ngành nhiều hơn xem drama, đồng thời dành phần lớn thời gian để "đào xới" cách làm marketing ở nhiều lĩnh vực khác nhau, đặc biệt là ngành Tech Marketing, nơi mà mọi thứ thay đổi nhanh như cách crush lật mặt. Việc liên tục "F5" bản thân này giúp mình luôn có sẵn tư duy mở và chất liệu mới để giải quyết các bài toán khó.', 'Outside the office, I prefer acquiring knowledge over flexing lifestyle. I listen to industry podcasts more than dramas, and I spend most of my time exploring marketing approaches across different fields, especially Tech Marketing, where everything changes as fast as a crush can change. This continuous self-refresh keeps me open-minded and full of fresh material to solve tough problems.'],
+      ['Kinh nghiệm thực chiến', 'Hands-on experience'],
+      ['của mình', 'of mine'],
+      ['Build audience từ content, không từ ads budget', 'Built audience from content, not from ad budgets'],
+      ['Quản lý toàn bộ hoạt động marketing và truyền thông cho công ty và các dự án đối tác qua Social Media, OOH và báo chí. Phụ trách từ lên Concept đến Execution, từ Content Calendar đến phân tích số liệu hàng tuần', 'Managed all marketing and communications activities for the company and partner projects across Social Media, OOH, and press. Responsible for concept through execution, from content calendar to weekly data analysis.'],
+      ['Xây dựng Facebook fanpage tăng 150K+ followers và kênh TikTok tăng 40K+ followers thông qua Content Planning và Community Engagement, không phải chạy ads thuần túy', 'Built a Facebook page that grew 150K+ followers and a TikTok channel that grew 40K+ followers through content planning and community engagement, not purely ads.'],
+      ['Phối hợp với Internal team và External partners để đảm bảo các chiến dịch marketing và content được triển khai đúng timeline và đúng thông điệp', 'Coordinated with internal teams and external partners to ensure marketing and content campaigns were executed on time and with the right message.'],
+      ['Soạn thảo tài liệu dự án và đề xuất hợp tác (partnership proposals) hỗ trợ team Business Development', 'Drafted project documents and partnership proposals to support the Business Development team.'],
+      ['Xây dựng tài liệu đào tạo và tham gia tổ chức workshop cho nhân viên và đối tác bên ngoài', 'Created training materials and helped organize workshops for employees and external partners.'],
+      ['Hỗ trợ tổ chức các sự kiện đối tác: Liveshow âm nhạc, Press Conference ra mắt sản phẩm, các hoạt động promotional', 'Supported partner event organization: music liveshows, product launch press conferences, and promotional activities.'],
+      ['Nghiên cứu thị trường và đối thủ cạnh tranh để xây dựng chiến lược marketing cho sản phẩm TV Box, dự án âm nhạc và phim điện ảnh', 'Researched market and competitors to build marketing strategies for TV Box products, music projects, and films.'],
+      ['Đưa brand Việt ra tầm quốc tế', 'Elevating Vietnamese brands to international markets'],
+      ['Quản lý các hoạt động IMC quốc tế cho các client lớn bao gồm Vingroup, Charm Group và VietJet,... Làm việc trực tiếp với mạng lưới truyền thông quốc tế và các team creative, media, strategy để deliver dự án đúng hạn và đúng kỳ vọng', 'Managed international IMC activities for major clients including Vingroup, Charm Group, and VietJet. Worked directly with global media networks and creative, media, and strategy teams to deliver projects on time and to expectations.'],
+      ['Duy trì và phát triển quan hệ với mạng lưới 5.000+ nhà báo quốc tế để hỗ trợ các chiến dịch PR và truyền thông quốc tế cho brand Việt Nam', 'Maintained and grew relationships with a network of 5,000+ international journalists to support PR and global communications for Vietnamese brands.'],
+      ['Tham gia tổ chức và điều phối sự kiện ra mắt xe VinFast cho cả thị trường Việt Nam và thị trường Mỹ, quản lý sự khác biệt văn hóa và kỳ vọng truyền thông của hai thị trường', 'Participated in organizing and coordinating the VinFast vehicle launch event for both the Vietnam and US markets, managing cultural differences and media expectations across the two markets.'],
+      [' Pitching thông tin sản phẩm, dịch vụ nổi bật của các Brand Việt Nam cho phóng viên quốc tế', 'Pitched standout product and service stories of Vietnamese brands to international reporters.'],
+      ['Cung cấp marketing insights, tư vấn và triển khai chiến dịch truyền thông Marketing cho các client quốc tế có kế hoạch gia nhập thị trường Việt Nam', 'Provided marketing insights, consulting, and implementation of marketing communications campaigns for international clients planning to enter Vietnam.'],
+      ['Những dự án', 'Projects'],
+      ['mình tự hào nhất', 'I am most proud of'],
+      ['Tăng trưởng organic followers cho fanpage chính thức của công ty', 'Organic follower growth for the company’s official fanpage'],
+      ['Kênh social của BH Media cần tăng trưởng mạnh mà không phụ thuộc hoàn toàn vào Paid ads. Target Audience đa dạng, từ người khán giả ưa thích nội dung giải trí đến người dùng tech (TV Box) và thậm chí các đối tác nghệ sĩ.', 'BH Media’s social channel needed strong growth without relying entirely on paid ads. The target audience was diverse, from entertainment fans to tech users (TV Box) and even artist partners.'],
+      ['Xây dựng Content Calendar theo từng Segment Audience, test nhiều Content Angle khác nhau (Behind-the-scenes, Educational, Entertainment), tối ưu theo data hàng tuần. Đặc biệt chú trọng Community Engagement: reply comment, tạo conversation, không chỉ broadcast một chiều.', 'Built a content calendar per audience segment, tested many content angles (behind-the-scenes, educational, entertainment), and optimized based on weekly data. Focused especially on community engagement: replying to comments, creating conversation, not just one-way broadcast.'],
+      ['Fanpage Facebook tăng 150K+ followers, kênh TikTok đăng lại nội dung từ fanpage cũng tăng 40K+ followers. Avg. Engagement Rate duy trì ở mức 4.16%, cao hơn mức trung bình ngành (khoảng 1-2%), lượt xem nội dung của fanpage mỗi tháng lên đến 12M+ cho thấy chất lượng audience và content phù hợp với thị hiếu người dùng. Quan trọng hơn, sự tăng trưởng này không phải đến từ việc đổ tiền vào quảng cáo mà là kết quả của một chiến lược content và Community Engagement bài bản.', 'The Facebook page grew by 150K+ followers, and the TikTok channel reposting page content also grew by 40K+ followers. The average engagement rate remained at 4.16%, above the industry average (around 1-2%). Monthly content views reached 12M+, showing the quality audience and content matched user preferences. More importantly, this growth did not come from spending heavily on ads, but from a solid content and community engagement strategy.'],
+      ['Truyền thông cho sự kiện ra mắt showroom VinFast tại thị trường Mỹ (thị trường mới, cần Establish Credibility từ đầu).', 'Handled communications for the VinFast showroom launch event in the US market (a new market that needed credibility from the start).'],
+      ['Customize Messaging để xây dựng Brand Awareness tại thị trường Mỹ. Activate mạng lưới 5.000+ nhà báo quốc tế. Phối hợp Cross-functional với team creative, media buyer và strategy để đảm bảo consistency trong Key Message nhưng adapt được tone và channel mà brand chỉ định.', 'Customized messaging to build brand awareness in the US. Activated a network of 5,000+ international journalists. Coordinated cross-functionally with creative, media buyer, and strategy teams to ensure consistency in key messaging while adapting to the tone and channels defined by the brand.'],
+      ['Cái tên VinFast xuất hiện trên hơn 100 outlets quốc tế, bao gồm các tờ báo lớn như The Wall Street Journal. Sự kiện showroom opening thu hút hơn 1,000 khách tham dự và tạo được tiếng vang tích cực trong cộng đồng người tiêu dùng Mỹ.', 'VinFast appeared in over 100 international outlets, including major publications like The Wall Street Journal. The showroom opening event attracted more than 1,000 attendees and generated positive buzz among US consumers.'],
+      ['Các thương hiệu vừa và nhỏ (SMBs) hoặc Startup thường có sản phẩm tốt nhưng thiếu một chiến lược truyền thông nhất quán trên đa kênh, dẫn đến việc tiêu tốn budget nhưng không tạo được impact rõ ràng.', 'Small and medium brands (SMBs) or startups often have good products but lack a consistent multi-channel communications strategy, which leads to budget spending without clear impact.'],
+      ['Đóng vai trò cầu nối để hiện thực hóa lý tưởng của brand. Mình trực tiếp nghiên cứu insight, lên kế hoạch truyền thông/marketing tổng thể, điều phối các bên liên quan và tự tay execute các Key Content để đảm bảo chiến dịch đi đúng hướng.', 'Acted as a bridge to realize the brand’s vision. I personally researched insights, developed comprehensive communications/marketing plans, coordinated stakeholders, and executed key content to keep campaigns on track.'],
+      ['Bạn có thể xem toàn bộ các sản phẩm thực tế thông qua các proposal mình đính kèm bên cạnh.', 'You can view all actual work through the proposals I attached nearby.'],
+      ['Vũ khí thực chiến của mình', 'My practical toolkit'],
+      ['gồm những gì?', 'includes what?'],
+      ['Nền tảng học thuật', 'Academic foundation'],
+      ['Đây là lần đầu tiên mình nhận ra mình thích làm content: tự lên concept, tự viết, tự đo xem có ai đọc không. Spoiler: Mùa chào tân này được các bạn khoá dưới phản hồi rất tích cực.', 'This was the first time I realized I loved doing content: coming up with concepts, writing, and measuring whether anyone read it. Spoiler: the freshman welcome event received very positive feedback from the juniors.'],
+      ['Nếu bạn cần người build audience, không chỉ manage content', 'If you need someone to build audience, not just manage content'],
+      ['Hãy drop một chiếc mail hoặc alo trực tiếp, mình đã sẵn sàng để cùng bạn bật chế độ execute.', 'Drop an email or call directly, I am ready to help you execute.'],
+      ['XEM HÌNH ẢNH', 'VIEW IMAGES']
+    ]);
+
+    const originalText = new WeakMap();
+    let isTranslated = false;
+
+    function getTextNodes(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      const nodes = [];
+      while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+      }
+      return nodes;
+    }
+
+    function applyTranslation(enable) {
+      getTextNodes(document.body).forEach(node => {
+        const normalized = node.textContent.replace(/\s+/g, ' ').trim();
+        if (!normalized) return;
+        const translated = translationMap.get(normalized);
+        if (!translated) return;
+
+        if (enable) {
+          if (!originalText.has(node)) {
+            originalText.set(node, node.textContent);
+          }
+          node.textContent = translated;
+        } else {
+          if (originalText.has(node)) {
+            node.textContent = originalText.get(node);
+          }
+        }
+      });
+    }
+
+    const translateButton = document.getElementById('translateButton');
+    if (translateButton) {
+      translateButton.addEventListener('click', function () {
+        if (isTranslated) {
+          applyTranslation(false);
+          translateButton.textContent = 'Translate page to English';
+        } else {
+          applyTranslation(true);
+          translateButton.textContent = 'Show original language';
+        }
+        isTranslated = !isTranslated;
       });
     }
 
